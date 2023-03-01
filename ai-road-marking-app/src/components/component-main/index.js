@@ -48,7 +48,7 @@ class Main extends Component {
                     <div className='export-image'>
                         <div className='export-image__download-image'>
                             <img src={uilImageDownload} />
-                            Скачать
+                            Скачать 2.0
                         </div>
                     </div>
                 </main>
