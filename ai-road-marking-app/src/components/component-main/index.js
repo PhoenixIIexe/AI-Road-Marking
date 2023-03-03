@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 
-import mingcuteRoadLine from '../../image/mingcute-road-line.svg';
+import logo30 from '../../image/logo30.png';
+import flagEn from '../../image/flag-en.svg';
 import mingcuteRoadLineWhite from '../../image/mingcute-road-line_white.svg';
-import importImage from '../../image/import-image.svg';
-import uilImageDownload from '../../image/uil-image-download.svg'
+import importImage from '../../image/image-import.svg';
+import uilImageDownload from '../../image/image-download.svg'
 
 import './component-main.css';
 
@@ -17,15 +18,15 @@ class Main extends Component {
                         <p className='log-app__name'>
                             AI. Road Marking
                         </p>
-                        <img src={mingcuteRoadLine} className='log-app__img' />
+                        <img src={logo30} className='log-app__img' />
                     </div>
                     <nav className='header__navigation navigation'>
-                        <a className='navigation__calibration button--blue button'>
+                        <a className='navigation__calibration button-calibration'>
                             Калибровка
                         </a>
 
-                        <a className='navigation__language button--blue button'>
-                            🇬🇧
+                        <a className='navigation__language button-language'>
+                            <img src={flagEn} />
                         </a>
                     </nav>
                 </header>
@@ -33,7 +34,7 @@ class Main extends Component {
                 <main className='main'>
                     <div className='main__log-app'>
                         <p className='log-app__name--white'>
-                            AI. Road Marking
+                            AI Road Marking
                         </p>
                         <img src={mingcuteRoadLineWhite} className='log-app__img' />
                     </div>
