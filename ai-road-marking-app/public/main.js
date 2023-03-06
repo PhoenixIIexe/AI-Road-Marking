@@ -19,7 +19,7 @@ function createWindow() {
     if (isDev)
         win.loadURL('http://localhost:3000');
     else
-        win.loadFile(`file://${path.join(__dirname, '../build/index.html')}`);
+        win.loadFile('../build/index.html');
 
     // win.loadURL(
     //     isDev

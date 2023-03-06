@@ -1,6 +1,9 @@
 body {
     font-family: 'Montserrat', 'Arial';
-    background: linear-gradient(180deg, #9491E2 0%, rgba(175, 242, 216, 0.5) 100%);
+    /* background: linear-gradient(180deg, #9491E2 0%, rgba(175, 242, 216, 0.5) 100%); */
+
+    /* background: linear-gradient(180deg, #010223 0%, #16163D 30.73%); */
+    background: #010223;
 
     height: 100vh;
     margin: 0;
@@ -54,22 +57,62 @@ body {
 }
 
 .log-app__name {
-    color: #444444;
+    color: #F8F8F8;
     margin: 0;
     margin-right: 5px;
+    font-size: 22px;
 }
 
 .log-app__name--white {
-    color: #F4F4F4;
+    color: #F8F8F8;
     font-size: 40px;
     text-align: center;
     font-weight: bold;
     margin: 0;
 }
 
-.log-app__img {}
+.log-app__img {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    padding: 5px;
+    background: #16163D;
+}
 
 .navigation {}
+
+.button-calibration {
+    border: 4px solid #FFB800;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-right: 10%;
+    padding: 10px 20px;
+
+    align-items: center;
+    text-align: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFB800;
+
+    cursor: pointer;
+}
+
+.button-calibration:hover {
+    background: #FFB800;
+    color: #F8F8F8;
+}
+
+.button-language {
+    align-items: center;
+    border: none;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    cursor: pointer;
+}
 
 .button {
     background: #FF5858;
@@ -128,12 +171,12 @@ body {
     flex-direction: column;
     position: relative;
 
-    background: #F8F8F8;
+    background: #16163D;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     align-items: center;
     text-align: center;
-    color: #555555;
+    color: #F8F8F8;
     padding: 40px;
 }
 
@@ -155,7 +198,7 @@ body {
 }
 
 .export-image {
-    background: rgba(248, 248, 248, 0.8);
+    background: #16163D;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     align-items: center;
@@ -170,8 +213,9 @@ body {
     display: flex;
     justify-content: center;
 
-    background: rgba(255, 88, 88, 0.87);
-    border-radius: 10px;
+    border: 4px solid #ff0849;
+    ;
+    border-radius: 20px;
 
     width: 25%;
     align-items: center;
@@ -185,7 +229,12 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #F8F8F8;
+    color: #ff0849;
 
     cursor: pointer;
+}
+
+.export-image__download-image:hover {
+    background: #ff0849;
+    color: #F8F8F8;
 }
