@@ -79,6 +79,10 @@ body {
     background-color: #AC5D9E;
 }
 
+.menu__href--active::after {
+    transform: none;
+}
+
 .main {
     flex-grow: 1;
     display: flex;
