@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Road Marking</title>
-    <script src="index.js"></script>
+    <script src="scrollMenuFile.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,50 @@
                     </p>
                     <div class="app__import-file import-file">
                         <input type="file" class="import-file__input">
-                        <img src="img/import-file.svg" alt="" class="import-file__img">
+                        <img src="img/import-file.svg" alt="" class="import-file__img import-file__img--brief">
                         <p class="import-file__description">Выберите или перетащите файлы</p>
+                    </div>
+
+                    <div class="app__uploaded-file uploaded-file">
+                        <p class="uploaded-file__description">Загруженные файлы</p>
+                        <ul class="uploaded-file__menu-file menu-file" onscroll="isFileVisible()">
+                            <li class="menu-file__item">
+                                <div class="menu-file__info-file info-file">
+                                    <img src="" alt="" class="info-file__type">
+                                    <div class="info-file__features">
+                                        <p>demo-test1.pdf</p>
+                                        <p>21640B</p>
+                                    </div>
+                                </div>
+                                <div class="menu-file__delete-file delete-file">
+                                    <img src="img/delete.svg" alt="" class="delete-file__cross">
+                                </div>
+                            </li>
+                            <li class="menu-file__item">
+                                <div class="menu-file__info-file info-file">
+                                    <img src="" alt="" class="info-file__type">
+                                    <div class="info-file__features">
+                                        <p>demo-test1.pdf</p>
+                                        <p>21640B</p>
+                                    </div>
+                                </div>
+                                <div class="menu-file__delete-file delete-file">
+                                    <img src="img/delete.svg" alt="" class="delete-file__cross">
+                                </div>
+                            </li>
+                            <li class="menu-file__item">
+                                <div class="menu-file__info-file info-file">
+                                    <img src="" alt="" class="info-file__type">
+                                    <div class="info-file__features">
+                                        <p>demo-test1.pdf</p>
+                                        <p>21640B</p>
+                                    </div>
+                                </div>
+                                <div class="menu-file__delete-file delete-file">
+                                    <img src="img/delete.svg" alt="" class="delete-file__cross">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </section>
             </div>
