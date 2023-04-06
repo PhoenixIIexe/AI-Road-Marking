@@ -33,17 +33,17 @@
         <main class="main">
             <div class="container">
                 <section class="main__app app">
-                    <p class="app__title">
+                    <p class="app__title app--move">
                         Загрузите фотографии для разметки дорожной ситуации
                     </p>
-                    <div class="app__import-file import-file">
+                    <div class="app__import-file import-file app--move">
                         <input type="file" class="import-file__input">
                         <img src="img/import-file.svg" alt="" class="import-file__img import-file__img--brief">
                         <p class="import-file__description">Выберите или перетащите файлы</p>
                     </div>
 
                     <div class="app__uploaded-file uploaded-file">
-                        <p class="uploaded-file__description">Загруженные файлы</p>
+                        <p class="uploaded-file__descriptio app--move">Загруженные файлы</p>
                         <ul class="uploaded-file__menu-file menu-file" onscroll="isFileVisible()">
                             <li class="menu-file__item">
                                 <div class="menu-file__info-file info-file">
@@ -155,6 +155,7 @@
                             </li>
                         </ul>
                     </div>
+                    <input type="submit" class="app__submit">
                 </section>
             </div>
         </main>
