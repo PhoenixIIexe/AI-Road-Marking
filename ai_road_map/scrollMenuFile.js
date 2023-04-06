@@ -39,7 +39,7 @@ const isFileVisible = () => {
     const files = menuFile[0].getElementsByClassName('menu-file__item');
     const position = 30 + menuFile[0].scrollTop;
     menuFile[0].style.maxHeight = `${158 + position - 30}px`
-    menuFile[0].style.top = `-${(position - 30) > 245 ? 245 : position - 30}px`;
+    // menuFile[0].style.top = `-${(position - 30) > 245 ? 245 : position - 30}px`;
     for (let appMove of appsMove)
         appMove.style.top = `-${(position - 30) > 245 ? 245 : position - 30}px`;
 
