@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Road Marking</title>
-    <script src="scrollMenuFile.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +41,9 @@
                         <p class="import-file__description">Выберите или перетащите файлы</p>
                     </div>
 
-                    <div class="app__uploaded-file uploaded-file app--move">
+                    <div id="uploadedFile" class="app__uploaded-file uploaded-file app--move">
                         <p class="uploaded-file__descriptio">Загруженные файлы</p>
-                        <ul class="uploaded-file__menu-file menu-file" onscroll="isFileVisible()">
+                        <ul id="menuFile" class="uploaded-file__menu-file menu-file" onscroll="isFileVisible()">
                             <li class="menu-file__item">
                                 <div class="menu-file__info-file info-file">
                                     <img src="" alt="" class="info-file__type">
@@ -160,6 +159,8 @@
             </div>
         </main>
     </div>
+
+    <script src="scrollMenuFile.js"></script>
 </body>
 
 </html>
