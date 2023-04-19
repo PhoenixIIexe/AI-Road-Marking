@@ -104,11 +104,20 @@ body {
     padding: 30px;
     gap: 1em;
     overflow: hidden;
+    max-height: 580px;
 }
 
-.app--move {}
+.swipe {
+    overflow-y: scroll;
+}
+
+.swipe::-webkit-scrollbar {
+    display: none;
+}
 
 .app__title {
+    position: sticky;
+    top: 0;
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
@@ -126,11 +135,12 @@ body {
 }
 
 .import-file {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
     padding: 10px;
 }
 
@@ -175,6 +185,8 @@ body {
 .app__uploaded-file {}
 
 .uploaded-file {
+    position: sticky;
+    top: 0;
     padding: 10px 0;
 }
 
@@ -200,9 +212,6 @@ body {
     gap: 8px;
     padding: 0;
     list-style-type: none;
-    overflow-y: scroll;
-    /* -ms-overflow-style: none; */
-    /* scrollbar-width: 200px; */
     max-height: 158px;
 }
 
