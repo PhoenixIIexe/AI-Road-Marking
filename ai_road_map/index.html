@@ -33,18 +33,20 @@
             <div class="container">
                 <section id="app" class="main__app app">
                     <div id="swipe" class="swipe" onscroll="swiping()">
-                        <p id="swipeTitle" class="app__title" style="position: -webkit-sticky;">
+                        <div id="swipeTitle" class="app__title --no-swap">
                             Загрузите фотографии для разметки дорожной ситуации
-                        </p>
-                        <div id="swipeImportFile" class="app__import-file import-file">
+                        </div>
+                        <div id="swipeImportFile" class="app__import-file import-file --no-swap">
                             <input type="file" class="import-file__input">
                             <img src="img/import-file.svg" alt="" class="import-file__img import-file__img--brief">
                             <p class="import-file__description">Выберите или перетащите файлы</p>
                         </div>
 
                         <div id="uploadedFile" class="app__uploaded-file uploaded-file">
-                            <p class="uploaded-file__descriptio">Загруженные файлы</p>
-                            <ul id="menuFile" class="uploaded-file__menu-file menu-file" onscroll="isFileVisible()">
+                            <div class="uploaded-file__description --no-swap">
+                                <p id="uploadedFileDescriptio" class="description">Загруженные файлы</p>
+                            </div>
+                            <ul id="menuFile" class="uploaded-file__menu-file menu-file">
                                 <li class="menu-file__item">
                                     <div class="menu-file__info-file info-file">
                                         <img src="" alt="" class="info-file__type">
