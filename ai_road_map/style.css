@@ -115,6 +115,13 @@ body {
     display: none;
 }
 
+.masked {
+    -webkit-mask-image: url(img/Subtract.svg);
+    mask-image: url(img/Subtract.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
 .--no-swap {
     position: sticky;
     position: -webkit-sticky;
@@ -130,7 +137,6 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    clip: rect();
 }
 
 .app__import-file {
