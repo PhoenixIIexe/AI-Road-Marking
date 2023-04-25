@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Road Marking</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="features.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -33,139 +34,33 @@
             <div class="container">
                 <section id="app" class="main__app app">
                     <div id="swipe" class="swipe" onscroll="swiping()">
-                        <div id="swipeTitle" class="app__title masked --no-swap">
+                        <div id="swipeTitle" class="app__title masked_1 --no-swap">
                             Загрузите фотографии для разметки дорожной ситуации
                         </div>
-                        <div id="swipeImportFile" class="app__import-file import-file --no-swap">
-                            <input type="file" class="import-file__input">
+                        <div id="swipeImportFile" class="app__import-file import-file masked_2 --no-swap">
+                            <input id="fileInput" type="file" class="import-file__input" accept="image/*"
+                                onchange="AddFile()" multiple>
                             <img src="img/import-file.svg" alt="" class="import-file__img import-file__img--brief">
-                            <p class="import-file__description">Выберите или перетащите файлы</p>
+                            <p id="importFileDesc" class="import-file__description fade-out">Выберите или перетащите
+                                файлы</p>
                         </div>
 
-                        <div id="uploadedFile" class="app__uploaded-file uploaded-file">
+                        <div id="uploadedFile" class="app__uploaded-file uploaded-file fade-out">
                             <div class="uploaded-file__description --no-swap">
                                 <p id="uploadedFileDescriptio" class="description">Загруженные файлы</p>
                             </div>
-                            <ul id="menuFile" class="uploaded-file__menu-file menu-file">
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
-                                <li class="menu-file__item">
-                                    <div class="menu-file__info-file info-file">
-                                        <img src="" alt="" class="info-file__type">
-                                        <div class="info-file__features">
-                                            <p>demo-test1.pdf</p>
-                                            <p>21640B</p>
-                                        </div>
-                                    </div>
-                                    <div class="menu-file__delete-file delete-file">
-                                        <img src="img/delete.svg" alt="" class="delete-file__cross">
-                                    </div>
-                                </li>
+                            <ul id="menuFile" class="uploaded-file__menu-file menu-file masked_3">
                             </ul>
                         </div>
                     </div>
-                    <input type="submit" class="app__submit">
+                    <input id="appSubmit" type="submit" class="app__submit fade-out">
                 </section>
             </div>
         </main>
     </div>
 
     <script src="src/Swipe.js"></script>
-    <script src="src/ScrollMenuFile.js"></script>
+    <script src="src/AddFile.js"></script>
 </body>
 
 </html>

@@ -103,8 +103,7 @@ body {
     box-sizing: border-box;
     padding: 30px;
     gap: 1em;
-    overflow: hidden;
-    max-height: 580px;
+    max-height: 530px;
 }
 
 .swipe {
@@ -115,11 +114,24 @@ body {
     display: none;
 }
 
-.masked {
+.masked_1 {
+    align-items: center;
     -webkit-mask-image: url(img/Subtract.svg);
     mask-image: url(img/Subtract.svg);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+}
+
+.masked_2 {
+    align-items: center;
+    -webkit-mask-image: url(img/Mask2.svg);
+    mask-image: url(img/Mask2.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.masked_3 {
+    clip-path: inset(40px 0px 0px round 20px);
 }
 
 .--no-swap {
@@ -188,12 +200,11 @@ body {
     margin-bottom: 5px;
     margin-top: 20px;
 
-    display: none;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .app__uploaded-file {
     margin: 0;
-    position: relative;
 }
 
 .uploaded-file {
@@ -201,7 +212,6 @@ body {
 }
 
 .uploaded-file__description {
-    overflow: hidden;
     z-index: 2;
     margin: 0;
 }
@@ -219,14 +229,16 @@ body {
 }
 
 .menu-file {
-    position: relative;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 0;
     list-style-type: none;
-    height: 158px;
+    /* height: auto; */
 }
 
 .menu-file::-webkit-scrollbar {
@@ -255,10 +267,18 @@ body {
 .info-file__type {
     width: 40px;
     height: 40px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.57, 0.03, 1, -0.03);
+}
+
+.info-file__type:hover {
+    height: 100%;
+    width: 100%;
 }
 
 .info-file__features {
     margin-left: 20px;
+    transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 .info-file__features p {
@@ -268,7 +288,7 @@ body {
 .menu-file__delete-file {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0.3s, opacity 0.3s linear;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,7 +299,7 @@ body {
     color: #FFFFFF;
 }
 
-.menu-file__item:hover .menu-file__delete-file {
+.menu-file__item:hover .menu-file__info-file:not(:hover)~.menu-file__delete-file {
     visibility: visible;
     opacity: 1;
 }
@@ -296,6 +316,11 @@ body {
     cursor: pointer;
 }
 
+.info-file__type:hover+.info-file__features {
+    visibility: hidden;
+    opacity: 0;
+}
+
 .delete-file {
     height: 40px;
     width: 40px;
@@ -308,7 +333,7 @@ body {
     background: fixed;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    height: 50px;
+    min-height: 50px;
     width: 212px;
     font-style: normal;
     font-weight: 700;
