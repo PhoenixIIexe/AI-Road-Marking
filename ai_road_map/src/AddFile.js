@@ -29,6 +29,8 @@ const CreateMuneItem = (file) => {
     // создаем img для типа файла
     const fileTypeImg = document.createElement('img');
     fileTypeImg.classList.add('info-file__type');
+    fileTypeImg.setAttribute('id', 'image-container');
+    fileTypeImg.setAttribute('onclick', 'Preview(this)');
     let reader = new FileReader();
     reader.onload = function (event) {
         fileTypeImg.src = event.target.result;
