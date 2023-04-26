@@ -75,6 +75,7 @@ const CreateMuneItem = (file) => {
 
     // добавляем li в родительский ul или другой контейнер
     const fileList = document.getElementById('menuFile');
+    li.classList.add('fade-in');
     fileList.appendChild(li);
 };
 
@@ -113,7 +114,3 @@ const deleteFile = (clickedElement) => {
         swipeImportFile.style.webkitMaskPositionY = `0px`;
     }
 };
-
-const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
