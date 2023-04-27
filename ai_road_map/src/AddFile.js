@@ -3,6 +3,8 @@ const uploadedFile = document.getElementById("uploadedFile");
 const appSubmit = document.getElementById("appSubmit");
 const fileInput = document.getElementById("fileInput");
 
+var FileList = new DataTransfer();
+
 uploadedFile.classList.add('hide');
 appSubmit.classList.add('hide');
 
@@ -12,8 +14,11 @@ const AddFile = () => {
     appSubmit.classList.remove('hide');
 
     const fileList = fileInput.files;
-    for (const file of fileList)
+    for (const file of fileList) {
         CreateMuneItem(file);
+        FileList.items.add(file);
+    }
+    fileInput.files = FileList.files;
 };
 
 const CreateMuneItem = (file) => {
@@ -92,21 +97,22 @@ const truncateFilename = (filename, maxLength) => {
 
 const deleteFile = (clickedElement) => {
     const fileList = fileInput.files;
+    console.log(fileList)
 
-    var newFileList = new DataTransfer();
+    for (const file of fileList) {
+        if (file.name === clickedElement.parentElement.id)
+            FileList.items.remove(file)
+        console.log(file.name, clickedElement.parentElement.id)
+    }
 
-    for (let i = 0; i < fileList.length; i++)
-        if (fileList[i].name !== clickedElement.parentElement.id)
-            newFileList.items.add(fileList[i]);
-
-    fileInput.files = newFileList.files;
+    fileInput.files = FileList.files;
     clickedElement.parentElement.classList.add('hide');
 
     clickedElement.parentElement.addEventListener('transitionend', (event) => {
         event.target.remove();
     });
 
-    if (fileInput.files.length == 0) {
+    if (FileList.files.length == 0) {
         importFileDesc.classList.remove('hide');
         uploadedFile.classList.add('hide');
         appSubmit.classList.add('hide');

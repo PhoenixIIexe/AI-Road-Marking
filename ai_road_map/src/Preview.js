@@ -1,4 +1,3 @@
 const Preview = (clickedElement) => {
-    console.log(1);
-    clickedElement.classList.toggle('zoom');
+    clickedElement.parentElement.parentElement.classList.toggle('zoom');
 };

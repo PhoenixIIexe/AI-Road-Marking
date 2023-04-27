@@ -269,11 +269,12 @@ body {
     height: 40px;
     border-radius: 10px;
     object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
 }
 
 .info-file__features {
     margin-left: 20px;
-    transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 .info-file__features p {
@@ -283,8 +284,8 @@ body {
 .menu-file__delete-file {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s, opacity 0.3s linear;
     display: flex;
+    transition: visibility 0.3s ease-in, opacity 0.3s ease-in-out;
     align-items: center;
     justify-content: center;
     font-style: normal;
@@ -294,7 +295,11 @@ body {
     color: #FFFFFF;
 }
 
-.menu-file__item:hover .menu-file__info-file:not(.info-file__type.zoom)~.menu-file__delete-file {
+.menu-file__item.zoom .menu-file__delete-file {
+    display: none;
+}
+
+.menu-file__item:not(.zoom):hover .menu-file__delete-file {
     visibility: visible;
     opacity: 1;
 }
@@ -311,9 +316,8 @@ body {
     cursor: pointer;
 }
 
-.info-file__type.zoom+.info-file__features {
-    visibility: hidden;
-    opacity: 0;
+.menu-file__item.zoom .info-file__features {
+    display: none;
 }
 
 .delete-file {
