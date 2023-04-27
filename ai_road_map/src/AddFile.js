@@ -18,7 +18,7 @@ const AddFile = () => {
         CreateMuneItem(file);
         FileList.items.add(file);
     }
-    fileInput.files = FileList.files;
+    fileInput.files = null;
 };
 
 const CreateMuneItem = (file) => {
@@ -96,16 +96,15 @@ const truncateFilename = (filename, maxLength) => {
 }
 
 const deleteFile = (clickedElement) => {
-    const fileList = fileInput.files;
-    console.log(fileList)
+    const fileList = FileList.files;
 
-    for (const file of fileList) {
-        if (file.name === clickedElement.parentElement.id)
-            FileList.items.remove(file)
-        console.log(file.name, clickedElement.parentElement.id)
-    }
+    var newFileList = new DataTransfer();
 
-    fileInput.files = FileList.files;
+    for (const file of fileList)
+        if (file.name !== clickedElement.parentElement.id)
+            newFileList.items.add(file)
+
+    FileList = newFileList;
     clickedElement.parentElement.classList.add('hide');
 
     clickedElement.parentElement.addEventListener('transitionend', (event) => {
